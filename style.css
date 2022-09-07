@@ -89,12 +89,12 @@ nav .container{
     align-items: center;
     justify-content: space-between;
 }
-nav .search-tab{
+.search-tab{
     background: var(--light-color);
     border-radius: var(--border-radius);
     padding: var(--padding-search);
 }
-nav .search-tab input[type="search"]{
+.search-tab input[type="search"]{
     background: transparent;
     width: 30vm;
     margin-left: 1rem;
@@ -362,4 +362,101 @@ main .container .left .profile{
 }
 .middle .likedby p{
     margin-left: 0.5rem;
+}
+
+/* right */
+
+main .container .right{
+    height: max-content;
+    position: sticky;
+    top: var(--sticky-topright);
+    bottom: 0;
+}
+.right .messages{
+    background: var(--white-color);
+    border-radius: var(--card-border-radius);
+    padding: var(--padding-card);
+}
+.right .messages .heading{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+.right .messages i{
+    font-size: 1.4rem;
+}
+.right .messages .search-tab{
+    display: flex;
+    margin-bottom: 1rem;
+}
+.right .messages .category{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+.right .messages .category h6{
+    width: 100%;
+    text-align: center;
+    border-bottom: 4px solid var(--light-color);
+    padding-bottom: 0.5rem;
+    font-size: 0.85rem;
+}
+.right .messages .category .active{
+    border-color: var(--dark-color);
+}
+.right .messages .message{
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    align-items: start;
+}
+
+.right .messages .message:last-child{
+    margin: 0;
+}
+.right .messages .message p{
+    font-size: 0.8rem;
+}
+.right .messages .profile-pic{
+    position: relative;
+    overflow: visible;
+}
+.right .profile-pic img{
+    border-radius: 50%;
+}
+.right .messages .message .profile-pic .active{
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    border: 3px solid var(--white-color);
+    background: var(--success-color);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.right .messages .message-requests{
+    color: var(--primary-color);
+}
+.right .friend-requests{
+ margin-top: 1rem;
+}
+.right .friend-requests h4{
+    color: var(--gray-color);
+    margin: 1rem 0;
+}
+.right .request{
+    background: var(--white-color);
+    padding: var(--padding-card);
+    border-radius: var(--card-border-radius);
+    margin-bottom: 0.7rem;
+}
+.right .request .info{
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.right .request .action{
+    display: flex;
+    gap: 1rem;
 }
