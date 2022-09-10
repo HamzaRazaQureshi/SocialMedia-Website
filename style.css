@@ -198,7 +198,7 @@ main .container .left .profile{
     overflow: hidden;
 }
 .left .sidebar .menu:last-child.active{
-    border-top-left-radius: var(--card-border-radius);
+    border-bottom-left-radius: var(--card-border-radius);
     overflow: hidden;
 }
 .left .btn{
