@@ -12,6 +12,9 @@ const acceptBtn3 = document.getElementById('req-3');
 
 const numberOfRequest = document.getElementsByClassName('message-requests');
 
+const theme = document.querySelector('#themes');
+const cust_theme = document.querySelector('.theme-popup'); 
+
 let count = 4;
 let req = "Request";
 
@@ -88,3 +91,19 @@ function setMessageRequestHTML() {
     count--;
     numberOfRequest[0].innerHTML = req + `(${count})`;
 }
+
+// THEME
+
+const opencustomtheme = () => {
+    cust_theme.style.display = 'grid'
+}
+
+const closethemepopup = (item) => {
+    if (item.target.classList.contains('theme-popup')){
+        cust_theme.style.display = 'none';
+    }
+}
+
+cust_theme.addEventListener('click',closethemepopup);
+
+theme.addEventListener('click', opencustomtheme);

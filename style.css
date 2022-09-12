@@ -480,6 +480,7 @@ main .container .right{
     padding: 3rem;
     border-radius: var(--card-border-radius);
     width: 50%;
+    box-shadow: 0 0 1rem var(--primary-color);
 }
 .theme-popup .font-size{
     margin-top: 5rem;
@@ -611,6 +612,9 @@ main .container .right{
     .left .btn{
         display: none;
     }
+    .theme-popup .card{
+        width: 80vw;
+    }
 }
 
 @media  screen and (max-width: 992px){
@@ -638,5 +642,8 @@ main .container .right{
     }
     main .container .right{
         display: none;
+    }
+    .theme-popup .card{
+        width: 92vw;
     }
 }
