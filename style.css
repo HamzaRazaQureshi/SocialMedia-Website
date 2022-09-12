@@ -11,11 +11,12 @@
 }
 
 :root{
+    --primary-color-hue: 252; 
     --white-color: hsl(252,30%, 100%);
     --dark-color: hsl(252, 30%, 17%);
     --light-color: hsl(252, 30%, 95%);
     --gray-color: hsl(252, 15%, 65%);
-    --primary-color: hsl(252, 75%, 60%);
+    --primary-color: hsl(var(--primary-color-hue), 75%, 60%);
     --secondary-color: hsl(252, 100%, 90%);
     --success-color: hsl(120, 95%, 65%);
     --danger-color: hsl(0, 90%, 65%);

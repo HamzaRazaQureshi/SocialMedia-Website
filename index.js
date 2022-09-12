@@ -15,6 +15,12 @@ const numberOfRequest = document.getElementsByClassName('message-requests');
 const theme = document.querySelector('#themes');
 const cust_theme = document.querySelector('.theme-popup'); 
 
+const fontsizes = document.querySelectorAll('.choose-size span');
+
+const pricolor = document.querySelectorAll('.choose-color span');
+
+var root = document.querySelector(':root');
+
 let count = 4;
 let req = "Request";
 
@@ -107,3 +113,76 @@ const closethemepopup = (item) => {
 cust_theme.addEventListener('click',closethemepopup);
 
 theme.addEventListener('click', opencustomtheme);
+
+// font size
+
+const removeactive = () => {
+    fontsizes.forEach(item => {
+        item.classList.remove('active')
+    })
+}
+
+fontsizes.forEach(size => {
+    size.addEventListener('click', () => {
+        removeactive();
+        let fontsize;
+        size.classList.toggle('active');
+
+        if (size.classList.contains('font-size1')){
+            fontsize = '10px';
+            root.style.setProperty('--sticky-topleft', '5.4rem');
+            root.style.setProperty('--sticky-topright', '5.4rem');
+        } else if (size.classList.contains('font-size2')){
+            fontsize = '13px';
+            root.style.setProperty('--sticky-topleft', '5.4rem');
+            root.style.setProperty('--sticky-topright', '-7rem');
+        } else if (size.classList.contains('font-size3')){
+            fontsize = '16px';
+            root.style.setProperty('--sticky-topleft', '-2rem');
+            root.style.setProperty('--sticky-topright', '-17rem');
+        } else if (size.classList.contains('font-size4')){
+            fontsize = '19px';
+            root.style.setProperty('--sticky-topleft', '-5rem');
+            root.style.setProperty('--sticky-topright', '-25rem');
+        } else if (size.classList.contains('font-size5')){
+            fontsize = '22px';
+            root.style.setProperty('--sticky-topleft', '-12rem');
+            root.style.setProperty('--sticky-topright', '-35rem');
+        }
+    document.querySelector('html').style.fontSize = fontsize;
+    })
+})
+
+// primary color
+
+// debugger
+// const changeactive = (item) => {
+//     item.forEach(pickcolor => {
+//         pickcolor.classList.remove('active');
+//     })
+// }
+
+pricolor.forEach(color => {
+    color.addEventListener('click', () => {
+        let primary;
+        // changeactive();
+
+        if (color.classList.contains('color1')){
+            primary = 252;
+        }
+        else if (color.classList.contains('color2')){
+            primary = 52;
+        }
+        else if (color.classList.contains('color3')){
+            primary = 352;
+        }
+        else if (color.classList.contains('color4')){
+            primary = 152;
+        }
+        else if (color.classList.contains('color5')){
+            primary = 202;
+        }
+        // color.classList.add('active');
+        root.style.setProperty('--primary-color-hue', primary);
+    })
+})
