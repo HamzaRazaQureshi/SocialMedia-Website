@@ -654,4 +654,14 @@ main .container .right{
     .left .sidebar i .notification-count{
         display: none;
     }
+    .theme-popup .choose-background{
+        gap: 0.2rem;
+    }
+    .theme-popup .choose-background > div span{
+        width: 0.5rem;
+        height: 0.5rem;
+        border: 2px solid var(--gray-color);
+        border-radius: 50%;
+        margin-right: 0.5rem;
+    }
 }
