@@ -651,4 +651,7 @@ main .container .right{
     .theme-popup .card{
         width: 92vw;
     }
+    .left .sidebar i .notification-count{
+        display: none;
+    }
 }
