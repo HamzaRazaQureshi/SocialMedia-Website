@@ -19,6 +19,10 @@ const fontsizes = document.querySelectorAll('.choose-size span');
 
 const pricolor = document.querySelectorAll('.choose-color span');
 
+const bg1 = document.querySelector('.bg1');
+const bg2 = document.querySelector('.bg2');
+const bg3 = document.querySelector('.bg3');
+
 var root = document.querySelector(':root');
 
 let count = 4;
@@ -155,23 +159,22 @@ fontsizes.forEach(size => {
 
 // primary color
 
-// debugger
-// const changeactive = (item) => {
-//     item.forEach(pickcolor => {
-//         pickcolor.classList.remove('active');
-//     })
-// }
+const changeactive = () => {
+    pricolor.forEach(pickcolor => {
+        pickcolor.classList.remove('active');
+    })
+}
 
 pricolor.forEach(color => {
     color.addEventListener('click', () => {
         let primary;
-        // changeactive();
+        changeactive();
 
         if (color.classList.contains('color1')){
-            primary = 252;
+            primary = 100;
         }
         else if (color.classList.contains('color2')){
-            primary = 52;
+            primary = 252;
         }
         else if (color.classList.contains('color3')){
             primary = 352;
@@ -182,7 +185,48 @@ pricolor.forEach(color => {
         else if (color.classList.contains('color5')){
             primary = 202;
         }
-        // color.classList.add('active');
+        color.classList.add('active');
         root.style.setProperty('--primary-color-hue', primary);
     })
+})
+
+// Background Color
+
+let lightlightness;
+let darklightness;
+let whitelightness;
+
+const changebg = () => {
+    root.style.setProperty('--lightcolor-lightness', lightlightness);
+    root.style.setProperty('--darkcolor-lightness', darklightness);
+    root.style.setProperty('--whitecolor-lightness', whitelightness);
+}
+
+bg1.addEventListener('click', () => {
+    bg1.classList.add('active');
+    bg2.classList.remove('active');
+    bg3.classList.remove('active');
+    window.location.reload();
+})
+
+bg2.addEventListener('click', () => {
+    lightlightness = '15%';
+    darklightness = '95%';
+    whitelightness = '20%';
+
+    bg2.classList.add('active');
+    bg1.classList.remove('active');
+    bg3.classList.remove('active');
+    changebg();
+})
+
+bg3.addEventListener('click', () => {
+    lightlightness = '0%';
+    darklightness = '95%';
+    whitelightness = '10%';
+
+    bg3.classList.add('active');
+    bg1.classList.remove('active');
+    bg2.classList.remove('active');
+    changebg();
 })
